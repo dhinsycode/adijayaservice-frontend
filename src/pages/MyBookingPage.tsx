@@ -205,11 +205,8 @@ export default function MyBookingPage() {
                     >
                         <div id="BookingStatus" className="relative w-full pb-[42px] pt-4">
                             <div className="flex">
-                                {/* STEP 1: Membuat Pesanan (Selalu Selesai/Active) */}
                                 <div className="flex flex-col items-center">
-
                                     <div className="relative z-10 flex h-[25px] items-center">
-                                        
                                         <div className={`h-2 w-[60px] rounded-full ${bookingDetails.is_paid ? "bg-[#0CA024]" : "bg-[#4c5a8c]"}`} />
                                         <div className="absolute right-0 top-0 translate-x-1/2">
                                             <div className="flex flex-col items-center gap-[6px]">
@@ -217,8 +214,7 @@ export default function MyBookingPage() {
                                                 bookingDetails.is_paid 
                                                 ? "bg-[#0CA024] text-white" 
                                                 : "bg-[#8cb8f4] text-[#C2836D]"
-                                            }`}>
-                                                    
+                                                }`}>
                                                     1
                                                 </div>
                                                 <p className={`text-center text-xs font-semibold leading-[18px] ${
@@ -231,14 +227,11 @@ export default function MyBookingPage() {
                                     </div>
                                 </div>
 
-                                {/* STEP 2: Konfirmasi Pembayaran */}
                                 <div className="relative flex h-[25px] w-full items-center">
-                                    {/* Garis konektor menggunakan variabel warna #4c5a8c jika belum, atau #0CA024 jika sudah */}
                                     <div className={`h-2 w-full rounded-full ${bookingDetails.is_paid ? "bg-[#0CA024]" : "bg-[#4c5a8c]"}`} />
                                     
                                     <div className="absolute right-1/2 top-0 translate-x-1/2">
                                         <div className="flex flex-col items-center gap-[6px]">
-                                            {/* Lingkaran menggunakan #8cb8f4 dan teks #C2836D jika belum bayar */}
                                             <div className={`flex h-[25px] w-[25px] items-center justify-center rounded-full text-xs font-bold leading-[18px] ${
                                                 bookingDetails.is_paid 
                                                 ? "bg-[#0CA024] text-white" 
@@ -255,12 +248,10 @@ export default function MyBookingPage() {
                                     </div>
                                 </div>
 
-                                {/* STEP 3: Mulai Pengerjaan */}
                                 <div className="relative z-10 flex h-[25px] w-[60px] items-center">
                                     <div className={`h-2 w-[60px] rounded-full ${bookingDetails.is_paid ? "bg-[#0CA024]" : "bg-[#4c5a8c]"}`} />
                                     <div className="absolute left-0 top-0 -translate-x-1/2">
                                         <div className="flex flex-col items-center gap-[6px]">
-                                            {/* Lingkaran menggunakan variabel warna dari contoh kamu */}
                                             <div className={`flex h-[25px] w-[25px] items-center justify-center rounded-full text-xs font-bold leading-[18px] ${
                                                 bookingDetails.is_paid 
                                                 ? "bg-[#0CA024] text-white" 
