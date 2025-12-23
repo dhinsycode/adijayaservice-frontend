@@ -207,10 +207,10 @@ export default function MyBookingPage() {
                             <div className="flex">
                                 {/* STEP 1: Membuat Pesanan (Selalu Selesai/Active) */}
                                 <div className="flex flex-col items-center">
-                                    <div className="relative z-10 flex h-[25px] items-center">
-                                        <div className={`h-2 w-full rounded-full ${bookingDetails.is_paid ? "bg-[#0CA024]" : "bg-[#4c5a8c]"}`} />
 
-                                       
+                                    <div className="relative z-10 flex h-[25px] items-center">
+                                        
+                                        <div className={`h-2 w-[60px] rounded-full ${bookingDetails.is_paid ? "bg-[#0CA024]" : "bg-[#4c5a8c]"}`} />
                                         <div className="absolute right-0 top-0 translate-x-1/2">
                                             <div className="flex flex-col items-center gap-[6px]">
                                                 <div className={`flex h-[25px] w-[25px] items-center justify-center rounded-full text-xs font-bold leading-[18px] ${
@@ -218,13 +218,14 @@ export default function MyBookingPage() {
                                                 ? "bg-[#0CA024] text-white" 
                                                 : "bg-[#8cb8f4] text-[#C2836D]"
                                             }`}>
+                                                    
+                                                    1
                                                 </div>
                                                 <p className={`text-center text-xs font-semibold leading-[18px] ${
                                                 bookingDetails.is_paid ? "text-black" : "text-[#8cb8f4]"
                                             }`}>
                                                 Membuat<br />Pesanan
                                             </p>
-
                                             </div>
                                         </div>
                                     </div>
