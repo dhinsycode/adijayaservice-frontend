@@ -199,128 +199,77 @@ export default function MyBookingPage() {
                 {!loading && bookingDetails && (
                     <div id="ResultBooking" className="space-y-[20px]">
                        
-                            <AccordionSection
-                            
-                                    title="Status Pemesanan"
-                                    iconSrc="/assets/images/icons/bottom-booking-form.svg"
-                                    
-                                    >
-
-                            {/* INI BAGIAN STATUS GRAFIK */}
-                            {bookingDetails.is_paid ? 
-                            <div id="BookingStatusJ completedbooking" className="relative w-full pb-[42px]">
-                                <div className="flex">
-                                    <div className="flex flex-col items-center">
+                    <AccordionSection
+                        title="Status Pemesanan"
+                        iconSrc="/assets/images/icons/bottom-booking-form.svg"
+                    >
+                        <div id="BookingStatus" className="relative w-full pb-[42px] pt-4">
+                            <div className="flex">
+                                {/* STEP 1: Membuat Pesanan (Selalu Selesai/Active) */}
+                                <div className="flex flex-col items-center">
                                     <div className="relative z-10 flex h-[25px] items-center">
-                                        <div className="h-2 w-[60px] rounded-full bg-[#F4F5F7]" />
-                                        <div className="absolute h-2 w-[60px] rounded-full bg-[#0CA024]" />
+                                        <div className="h-2 w-[60px] rounded-full bg-[#0CA024]" /> {/* Warna Hijau untuk Selesai */}
                                         <div className="absolute right-0 top-0 translate-x-1/2">
-                                        <div className="flex flex-col items-center gap-[6px]">
-                                            <div className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#0CA024] text-xs font-bold leading-[18px] text-white">
-                                            1
+                                            <div className="flex flex-col items-center gap-[6px]">
+                                                <div className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#0CA024] text-xs font-bold leading-[18px] text-white">
+                                                    1
+                                                </div>
+                                                <p className="text-center text-xs font-semibold leading-[18px] text-black">
+                                                    Membuat<br />Pesanan
+                                                </p>
                                             </div>
-                                            <p className="text-center text-xs font-semibold leading-[18px]">
-                                            Membuat
-                                            <br />
-                                            Pesanan
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* STEP 2: Konfirmasi Pembayaran */}
+                                <div className="relative flex h-[25px] w-full items-center">
+                                    {/* Garis konektor menggunakan variabel warna #4c5a8c jika belum, atau #0CA024 jika sudah */}
+                                    <div className={`h-2 w-full rounded-full ${bookingDetails.is_paid ? "bg-[#0CA024]" : "bg-[#4c5a8c]"}`} />
+                                    
+                                    <div className="absolute right-1/2 top-0 translate-x-1/2">
+                                        <div className="flex flex-col items-center gap-[6px]">
+                                            {/* Lingkaran menggunakan #8cb8f4 dan teks #C2836D jika belum bayar */}
+                                            <div className={`flex h-[25px] w-[25px] items-center justify-center rounded-full text-xs font-bold leading-[18px] ${
+                                                bookingDetails.is_paid 
+                                                ? "bg-[#0CA024] text-white" 
+                                                : "bg-[#8cb8f4] text-[#C2836D]"
+                                            }`}>
+                                                2
+                                            </div>
+                                            <p className={`text-center text-xs font-semibold leading-[18px] ${
+                                                bookingDetails.is_paid ? "text-black" : "text-[#8cb8f4]"
+                                            }`}>
+                                                Konfirmasi<br />Pembayaran
                                             </p>
                                         </div>
-                                        </div>
                                     </div>
-                                    </div>
-                                    <div className="relative flex h-[25px] w-full items-center">
-                                    <div className="h-2 w-full rounded-full bg-[#F4F5F7]" />
-                                    <div className="absolute h-2 w-1/2 rounded-full bg-[#0CA024]" />
-                                    <div className="absolute right-1/2 top-0 z-10 translate-x-1/2">
-                                        <div className="flex flex-col items-center gap-[6px]">
-                                        <div className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#0CA024] text-xs font-bold leading-[18px] text-white">
-                                            2
-                                        </div>
-                                        <p className="text-center text-xs font-semibold leading-[18px]">
-                                            Konfirmasi
-                                            <br />
-                                            Pembayaran
-                                        </p>
-                                        </div>
-                                    </div>
-                                    <div className="absolute right-0 h-2 w-1/2 rounded-full bg-[#0CA024]" />
-                                    </div>
-                                    <div className="relative z-10 flex h-[25px] w-[60px] items-center">
-                                    <div className="h-2 w-[60px] rounded-full bg-[#F4F5F7]" />
-                                    <div className="absolute h-2 w-full rounded-full bg-[#0CA024]" />
+                                </div>
+
+                                {/* STEP 3: Mulai Pengerjaan */}
+                                <div className="relative z-10 flex h-[25px] w-[60px] items-center">
+                                    <div className={`h-2 w-[60px] rounded-full ${bookingDetails.is_paid ? "bg-[#0CA024]" : "bg-[#4c5a8c]"}`} />
                                     <div className="absolute left-0 top-0 -translate-x-1/2">
                                         <div className="flex flex-col items-center gap-[6px]">
-                                        <div className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#0CA024] text-xs font-bold leading-[18px] text-white">
-                                            3
-                                        </div>
-                                        <p className="text-center text-xs font-semibold leading-[18px]">
-                                            Mulai
-                                            <br />
-                                            Pengerjaan
-                                        </p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-                            :
-                            <div id="BookingStatusJ incompleted" className="relative w-full pb-[42px]">
-                                <div className="flex">
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative z-10 flex h-[25px] items-center">
-                                            <div className="h-2 w-[60px] rounded-full bg-[#F4F5F7]" />
-                                            <div className="absolute h-2 w-[60px] rounded-full bg-[#0CA024]" />
-                                            <div className="absolute right-0 top-0 translate-x-1/2">
-                                                <div className="flex flex-col items-center gap-[6px]">
-                                                    <div className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#0CA024] text-xs font-bold leading-[18px] text-white">
-                                                        1
-                                                    </div>
-                                                    <p className="text-xs text-center font-semibold leading-[18px]">
-                                                        Membuat
-                                                        <br />
-                                                        Pesanan
-                                                    </p>
-                                                </div>
+                                            {/* Lingkaran menggunakan variabel warna dari contoh kamu */}
+                                            <div className={`flex h-[25px] w-[25px] items-center justify-center rounded-full text-xs font-bold leading-[18px] ${
+                                                bookingDetails.is_paid 
+                                                ? "bg-[#0CA024] text-white" 
+                                                : "bg-[#8cb8f4] text-[#C2836D]"
+                                            }`}>
+                                                3
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex h-[25px] w-full items-center">
-                                        <div className="h-2 w-full rounded-full bg-[#F4F5F7]" />
-                                        <div className="absolute h-2 w-1/2 rounded-full bg-[#0CA024]" />
-                                        <div className="absolute right-1/2 top-0 translate-x-1/2">
-                                            <div className="flex flex-col items-center gap-[6px]">
-                                                <div className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#0CA024] text-xs font-bold leading-[18px] text-white">
-                                                    2
-                                                </div>
-                                                <p className="text-xs text-center font-semibold leading-[18px]">
-                                                    Konfirmasi
-                                                    <br />
-                                                    Pembayaran
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="relative z-10 flex h-[25px] w-[60px] items-center">
-                                        <div className="h-2 w-[60px] rounded-full bg-[#F4F5F7]" />
-                                        <div className="absolute left-0 top-0 -translate-x-1/2">
-                                            <div className="flex flex-col items-center gap-[6px]">
-                                                <div className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#0CA024] text-xs font-bold leading-[18px] text-white">
-                                                    3
-                                                </div>
-                                                <p className="text-xs text-center font-semibold leading-[18px]">
-                                                    Mulai
-                                                    <br />
-                                                    Pengerjaan
-                                                </p>
-                                            </div>
+                                            <p className={`text-center text-xs font-semibold leading-[18px] ${
+                                                bookingDetails.is_paid ? "text-black" : "text-[#8cb8f4]"
+                                            }`}>
+                                                Mulai<br />Pengerjaan
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
-                             }
-
-                        
-                        </AccordionSection>
+                            </div>
+                        </div>
+                    </AccordionSection>
                         
                             <AccordionSection
                             
