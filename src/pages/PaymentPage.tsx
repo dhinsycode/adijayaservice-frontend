@@ -56,7 +56,6 @@ export default function PaymentPage () {
         }).format(value);
     }
 
-    //cocokin ke backend dari localstorage
     const fetchServiceDetails = async(cartItems: CartItem[]) => {
         try{
             const fetchedDetails = await Promise.all(
@@ -83,7 +82,6 @@ export default function PaymentPage () {
         }
     };
 
-    //ngambil data keranjang(cart) sama booking
     useEffect(()=>{
         const cartData = localStorage.getItem("cart");
         const savedBookingData = localStorage.getItem("bookingData");
@@ -110,7 +108,6 @@ export default function PaymentPage () {
     const tax = subtotal * TAX_RATE;
     const total = subtotal + tax;
 
-    //handle untuk upload file bukti pembayaran
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
         const file = e.target.files ?  e.target.files[0] : null;
         setFormData((prev) => ({
@@ -133,12 +130,10 @@ export default function PaymentPage () {
 
         const submissionData = new FormData();
 
-        //BUKTI PEMBAYARAN
         if(formData.proof) {
             submissionData.append("proof", formData.proof);
         }
 
-        //DATA PERSONAL
         if(bookingData) {
             submissionData.append("name", bookingData.name);
             submissionData.append("email", bookingData.email);
@@ -150,15 +145,12 @@ export default function PaymentPage () {
             submissionData.append("schedule_at", bookingData.schedule_at);
         }
 
-        //BAGIAN ID SERVICE
         formData.service_ids.forEach((id, index)=>{
             submissionData.append(`service_ids[${index}]`, String(id));
         });
 
-        //COBA SUBMIT KE API NYA
         try {
             setLoading(true);
-            //masukin data ke api, async di atas udah jadi await aja disini
             const response = await apiClient.post("/booking-transaction", submissionData, {
                 headers: {
                 "Content-Type": "multipart/form-data",
@@ -191,8 +183,6 @@ export default function PaymentPage () {
             }
     };
 
-
-    //kondisi loading dan eror
     if(loading){
         return <p className="flex items-center justify-center min-h-screen bg-white"> loading data...</p>;
     }
@@ -486,7 +476,6 @@ export default function PaymentPage () {
       </AccordionSection>
     </div>
 
-    {/* BAGIAN FORM TAMBAHIN AKSI ONSUMBIT MENJALANKAN HANDLESUBMIT */}
     <form onSubmit={handleSubmit} className="mt-[20px]">
      
         <AccordionSection
@@ -510,13 +499,11 @@ export default function PaymentPage () {
                 id="upload"
                 className="absolute left-12 top-1/2 -translate-y-1/2 py-[50px] text-custom-gray"
               >
-                {/* BUAT KONDISI BUAT TAMPILAN NAMA FILE */}
 
                 {fileName ? fileName : 'Unggah Bukti Pembayaran'}
                 
               </p>
-
-              {/* tambahin onchange */}
+              
               <input onChange={handleChange}
                 type="file"
                 name="proof"

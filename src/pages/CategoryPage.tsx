@@ -11,9 +11,6 @@ export default function CategoryPage () {
     const [category, setCategory] = useState<Category | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string |  null >(null);
-
-    //animasi scroll
-     
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(()=> {
@@ -84,7 +81,6 @@ export default function CategoryPage () {
     <div className="relative mx-auto max-w-[640px] px-5">
       <div
         id="ContainerNav"
-        //="flex items-center justify-between py-[14px] transition-all duration-300"
         className={`flex items-center justify-between py-[14px] transition-all duration-300
             ${isScrolled ? 'bg-white rounded-[22px] px-[16px] shadow-[0px_12px_20px_0px_#0305041C]' : ''}
             `}

@@ -52,7 +52,6 @@ export default function BookingPage() {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
         console.log(tomorrow);
-        // YYYY-MM-DDTHH:MM:SS.sssZ
         const formattedDate = tomorrow.toISOString().split("T")[0];
 
         setFormData((prev) => ({
@@ -442,7 +441,6 @@ export default function BookingPage() {
                                     </div>
                                 </label>
 
-                                {/*PAKE MAPING*/}
                                 <label className="flex flex-col gap-2">
                                     <h4 className="font-semibold">Kota</h4>
                                       {formErrors.find((error) => 

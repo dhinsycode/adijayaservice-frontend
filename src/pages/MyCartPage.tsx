@@ -13,22 +13,20 @@ export default function MyCartPage () {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    //ambil data sekaligus consume API
     useEffect(() => {
-        const savedCart = localStorage.getItem("cart"); //wadah dapetin seluruh data di local storage
+        const savedCart = localStorage.getItem("cart");
         if (savedCart) {
             const cartItems: CartItem[] = JSON.parse(savedCart);
             setCart(cartItems);
         
-            //proses fetching api di backend
         const fetchServiceDetails = async () => {
-            const validServices: HomeService[] = []; //cek valid nya data
-            const updatedCart: CartItem[] = []; //nyimpen data cart yg 3
+            const validServices: HomeService[] = []; 
+            const updatedCart: CartItem[] = []; 
 
-        for (const item of cartItems) { //item yg ingin di cek
+        for (const item of cartItems) { 
             try {
                 const response = await apiClient.get(`/service/${item.slug}`);
-                const service = response.data.data; //data yg berhasil disimpan atau valid
+                const service = response.data.data;
 
                 if (service) {
                     validServices.push(service);
@@ -44,7 +42,7 @@ export default function MyCartPage () {
                 console.error(
                     `Error fetching service with slug ${item.slug}: ${error.message}`
                 );
-                //update ke keranjang, yg eror engga disimpen, sisanya disimpen
+
                  const updatedCartAfterError = cartItems.filter(
                     (cartItem) => cartItem.slug !== item.slug
                  );

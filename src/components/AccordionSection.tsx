@@ -35,7 +35,6 @@ export default function AccordionSection({title, children, iconSrc}: AccordionSe
         </button>
       </div>
 
-  {/*bagian childern*/}
       {isOpen && 
       <div className="flex flex-col gap-4">
         {children}

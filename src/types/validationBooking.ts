@@ -11,8 +11,6 @@ export const bookingSchema = z.object({
   city: z.string().min(1, "City is required"),
 });
 
-//validasi bukti pembayaran
-
 export const paymentSchema = z.object({
     proof: z
     .instanceof(File)

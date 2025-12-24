@@ -41,10 +41,7 @@ export default function MyBookingPage() {
         setLoading(true);
         setNotFound(false);
 
-        //API CALLS
         try {
-
-            //masukin data ke api, async di atas udah jadi await aja disini
             const response = await apiClient.post("/check-booking", formData);
 
             if (response.status === 200 || response.data.data) {
@@ -175,8 +172,6 @@ export default function MyBookingPage() {
                         </button>
                     </section>
                 </form>
-
-                {/* BAGIAN NOT FOUNDS DIBIKIN KONDISI KAPAN MUNCULNYA */}
 
                 {!loading && notFound && (
                     <section
@@ -322,7 +317,6 @@ export default function MyBookingPage() {
                                     
                                     >
 
-                            {/* BAGIAN DETAIL SERVICE */}
 
                             <div className="flex flex-col gap-4" id="ServicesOrderedJ">
                                 {bookingDetails.transaction_details.map((detail, index) => ( 
@@ -457,7 +451,6 @@ export default function MyBookingPage() {
                                 </div>
                                 <hr className="border-custom-light" />
 
-                                {/* BUKTI PEMBAYARAN */}
                                 <div className="flex w-full items-center justify-center overflow-hidden rounded-3xl">
                                     <img
                                         src={`${BASE_URL}/${bookingDetails.proof}`}

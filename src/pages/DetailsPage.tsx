@@ -12,16 +12,9 @@ export default function DetailsPage () {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null >(null);
 
-    //STATE BUAT CART
-
     const [cart, setCart] = useState<CartItem[]>([]);
     const [isAdding, setIsAdding] = useState(false);
-
-    //buat animasi scrolling
     const [isScrolled, setIsScrolled] = useState(false);
-
-
-    //HOOKS BUAT ADD CART
 
     useEffect(()=> {
         const savedCart = localStorage.getItem("cart");
