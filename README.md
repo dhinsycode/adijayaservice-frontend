@@ -6,10 +6,10 @@ Adi Jaya Services adalah aplikasi web yang memungkinkan pengguna untuk dengan mu
 
 ## 🚀 Fitur
 
-- Booking Layanan Rumah: Memesan layanan seperti listrik, plumbing, dekorasi, dan kebersihan dengan mudah.
-- Detail Layanan Lengkap: Informasi harga, durasi, deskripsi, benefit, dan testimonial tersedia di setiap layanan.
-- Status Populer & Rating: Menunjukkan layanan yang paling diminati dan ulasan pelanggan.
-- UI Responsif & Modern: Dibangun dengan React dan TailwindCSS untuk tampilan bersih dan mobile-friendly.
+- **Booking Layanan Rumah**: Memesan layanan seperti listrik, plumbing, dekorasi, dan kebersihan dengan mudah.
+- **Detail Layanan Lengkap**: Informasi harga, durasi, deskripsi, benefit, dan testimonial tersedia di setiap layanan.
+- **Status Populer & Rating**: Menunjukkan layanan yang paling diminati dan ulasan pelanggan.
+- **UI Responsif & Modern**: Dibangun dengan React dan TailwindCSS untuk tampilan bersih dan mobile-friendly.
 
 
 ## 🛠️ Tech Stack
@@ -47,7 +47,6 @@ npm run dev
 
 ## Kontribusi
 Kontribusi disambut baik! Jika Anda ingin berkontribusi, silakan fork repositori ini dan buat pull request dengan fitur atau perbaikan Anda.
-
 
 ## Kontak
 Jika Anda memiliki pertanyaan, saran, atau ingin melaporkan masalah, silakan hubungi:
