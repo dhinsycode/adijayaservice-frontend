@@ -2,7 +2,7 @@
 
 Adi Jaya Services adalah aplikasi web yang memungkinkan pengguna untuk dengan mudah memesan layanan rumah tangga seperti perbaikan listrik dan plumbing, pemasangan furnitur dan perlengkapan, dekorasi rumah, dan pembersihan mendalam. Aplikasi ini terintegrasi dengan API backend untuk mengelola detail layanan, pemesanan, dan data pengguna secara efisien, memberikan pengalaman yang lancar dan responsif.
 
-![image alt](https://github.com/ramdhini/AdiJaya-Service/blob/f80c9c1727ac0dfdf0596c04474b3e41089122ea/mockup-adijaya.png)
+![image alt]([https://github.com/ramdhini/AdiJaya-Service/blob/f80c9c1727ac0dfdf0596c04474b3e41089122ea/mockup-adijaya.png](https://github.com/dhinsycode/adijayaservice-frontend/blob/1e0f5d01940df349e3311c41ed0a833d56d49bd2/adijaya-service-mock.png))
 
 ## 🚀 Fitur
 
