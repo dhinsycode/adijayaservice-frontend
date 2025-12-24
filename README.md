@@ -2,7 +2,7 @@
 
 Adi Jaya Services adalah aplikasi web yang memungkinkan pengguna untuk dengan mudah memesan layanan rumah tangga seperti perbaikan listrik dan plumbing, pemasangan furnitur dan perlengkapan, dekorasi rumah, dan pembersihan mendalam. Aplikasi ini terintegrasi dengan API backend untuk mengelola detail layanan, pemesanan, dan data pengguna secara efisien, memberikan pengalaman yang lancar dan responsif.
 
-![image alt](https://github.com/ramdhini/AdiJaya-Service/blob/f80c9c1727ac0dfdf0596c04474b3e41089122ea/mockup-adijaya.png)
+![image alt](https://github.com/dhinsycode/adijayaservice-frontend/blob/96e5671c77a829bae9dbf8c768247d0c6df57af2/adijaya-service-mock.png)
 
 ## 🚀 Fitur
 
@@ -25,10 +25,10 @@ Adi Jaya Services adalah aplikasi web yang memungkinkan pengguna untuk dengan mu
 
 ```bash
 # Clone repo
-git clone https://github.com/ramdhini/AdiJaya-Service.git
+git clone https://github.com/dhinsycode/adijayaservice-frontend.git
 
 # Masuk ke folder
-cd AdiJaya-Service
+cd adijayaservice-frontend
 
 # Install dependencies
 npm install
@@ -38,18 +38,22 @@ npm run dev
 ```
 
 **## 📸 Link Deploy**
-on progress
 
+[Adi Jaya Service](https://adijaya-service.vercel.app/)
+
+**## 📸 Demo App**
+
+[Demo App](https://drive.google.com/drive/folders/1jyE_922WL8FbGVnWn6_bz4fsP-J3Ek81?usp=drive_link)
 
 ## Kontribusi
 Kontribusi disambut baik! Jika Anda ingin berkontribusi, silakan fork repositori ini dan buat pull request dengan fitur atau perbaikan Anda.
 
 
-
 ## Kontak
 Jika Anda memiliki pertanyaan, saran, atau ingin melaporkan masalah, silakan hubungi:
 
-* [Ramdhini] - [ramdhininovita0811@gmail.com]
+* [Email] - [ramdhininovita0811@gmail.com]
+* [Linkedln] - [www.linkedin.com/in/ramdhininovitasari]
 
 
 
